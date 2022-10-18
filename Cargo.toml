@@ -1,0 +1,16 @@
+[package]
+name = "wamr-jni"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = [ "cdylib" ]
+
+[dependencies]
+wamr-sys = { git = "https://github.com/morn-0/wamr-sys" }
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
